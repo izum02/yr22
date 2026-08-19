@@ -11,8 +11,10 @@ WORKDIR /app
 RUN echo 'YXB0LWdldCB1cGRhdGUgJiYgYXB0LWdldCBpbnN0YWxsIC15IC0tbm8taW5zdGFsbC1yZWNvbW1lbmRzIGNhLWNlcnRpZmljYXRlcyBjdXJsIGZmbXBlZyAmJiBybSAtcmYgL3Zhci9saWIvYXB0L2xpc3RzLyo=' | base64 -d | sh
 
 # Deno is the recommended JS runtime for yt-dlp EJS.
-# yt-dlp's current EJS guide requires Deno >= 2.3.
-RUN apt update && apt install p7zip-full \
+# ytdlP's current EJS guide requires Deno >= 2.3.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends p7zip-full curl \
+    && rm -rf /var/lib/apt/lists/* \
     && curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh \
     && deno --version
 
