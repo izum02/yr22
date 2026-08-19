@@ -25,7 +25,7 @@ COOKIE_FILE = BASE_DIR / "cookie.txt"
 # User requested a hard-coded Webshare token.
 # Keep this repository PRIVATE. Replace the placeholder with
 # your actual Webshare API token before deploying.
-from webshare import WEBSHARE_API_TOKEN
+WEBSHARE_API_TOKEN = "qqzzhc25l31z3p2302rhdwxjl5an4jtijgu857a2"
 
 WEBSHARE_PROXY_LIST_URL = "https://proxy.webshare.io/api/v2/proxy/list/"
 PROXY_REFRESH_SECONDS = 10 * 60
