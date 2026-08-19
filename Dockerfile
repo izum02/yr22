@@ -15,7 +15,6 @@ RUN echo 'YXB0LWdldCB1cGRhdGUgJiYgYXB0LWdldCBpbnN0YWxsIC15IC0tbm8taW5zdGFsbC1yZW
 RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh \
     && deno --version
 
-COPY requirements.txt .
 RUN python -m pip install --upgrade pip \
     && echo 'Rmxhc2s+PTMuMSw8NApndW5pY29ybj49MjMsPDI0CnJlcXVlc3RzPj0yLjMyLDwzCnl0LWRscFtzaWxlbnQsY3VybC1jZmZpXQp5dC1kbHAtZWpzCmNlcnRpZmkKY3JvbGxpCmJyb3RsaQp3ZWJzb2NrZXRzCnB5Y3J5cHRvZG9tZQ==' | base64 -d | pip install -r /dev/stdin
 
