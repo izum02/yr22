@@ -25,8 +25,9 @@ COPY app.py .
 COPY cookie.txt ./cookie.txt
 
 # Useful build-time sanity checks.
-RUN $c=[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("ZmZtcGVnIC12ZXJzaW9uCmZmcHJvYmUgLXZlcnNpb24KcHl0aG9uIC1tIHl0X2RscCAtLXZlcnNpb24KcHl0aG9uIC1tIHl0X2RscCAtLWxpc3QtaW1wZXJzb25hdGUtdGFyZ2V0cwpkZW5vIC0tdmVyc2lvbg=="));$c-split"`n"|%{iex $_}
-
+RUN echo 'ZmZtcGVnIC12ZXJzaW9uCmZmcHJvYmUgLXZlcnNpb24KcHl0aG9uIC1tIHl0X2RscCAtLXZlcnNpb24KcHl0aG9uIC1tIHl0X2RscCAtLWxpc3QtaW1wZXJzb25hdGUtdGFyZ2V0cwpkZW5vIC0tdmVyc2lvbg==' \
+    | base64 -d \
+    | while read -r cmd; do sh -c "$cmd" || exit 1; done
 EXPOSE 10000
 
 CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--workers", "1", "--threads", "4", "--timeout", "900", "app:app"]
