@@ -136,13 +136,6 @@ def refresh_proxy_pool(force=False):
                 "Webshare API token is not configured. "
                 "Please set WEBSHARE_API_TOKEN in the code."
             )
-        
-        if "qqzzhc25l31z3p2302rhdwxjl5an4jtijgu857a2" in WEBSHARE_API_TOKEN:
-            print("ERROR: WEBSHARE_API_TOKEN appears to be a placeholder")
-            raise RuntimeError(
-                "Webshare API token appears to be a placeholder. "
-                "Please replace it with your actual Webshare API token."
-            )
 
         try:
             print(f"Fetching proxies from {WEBSHARE_PROXY_LIST_URL}...")
