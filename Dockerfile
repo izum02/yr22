@@ -12,7 +12,7 @@ RUN echo 'YXB0LWdldCB1cGRhdGUgJiYgYXB0LWdldCBpbnN0YWxsIC15IC0tbm8taW5zdGFsbC1yZW
 
 # Deno is the recommended JS runtime for yt-dlp EJS.
 # yt-dlp's current EJS guide requires Deno >= 2.3.
-RUN sudo apt install p7zip-full \
+RUN apt update && apt install p7zip-full \
     && curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh \
     && deno --version
 
