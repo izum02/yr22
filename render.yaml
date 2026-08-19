@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: yr2
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
