@@ -19,7 +19,7 @@ RUN apt-get update \
     && deno --version
 
 RUN python -m pip install --upgrade pip \
-    && echo 'Rmxhc2s+PTMuMSw8NApndW5pY29ybj49MjMsPDI0CnJlcXVlc3RzPj0yLjMyLDwzCnl0LWRscFtzaWxlbnQsY3VybC1jZmZpXQp5dC1kbHAtZWpzCmNlcnRpZmkKY3JvbGxpCmJyb3RsaQp3ZWJzb2NrZXRzCnB5Y3J5cHRvZG9tZQ==' | base64 -d | pip install -r /dev/stdin
+    && echo 'Rmxhc2s+PTMuMSw8NA0KZ3VuaWNvcm4+PTIzLDwyNA0KcmVxdWVzdHM+PTIuMzIsPDMNCnl0LWRscFtkZWZhdWx0LGN1cmwtY2ZmaV0NCnl0LWRscC1lanMNCmNlcnRpZmkNCmJyb3RsaQ0Kd2Vic29ja2V0cw0KcHljcnlwdG9kb21l' | base64 -d | pip install -r /dev/stdin
 
 COPY app.py .
 COPY cookie.txt ./cookie.txt
